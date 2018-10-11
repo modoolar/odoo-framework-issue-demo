@@ -13,6 +13,7 @@
         "project",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "data/project_data.xml",
     ],
 }

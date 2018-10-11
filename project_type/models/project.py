@@ -1,10 +1,18 @@
 from odoo import models, fields, api
+import odoo.tools as tools
 
 
 class ProjectType(models.Model):
     _name = "project.type"
 
     name = fields.Char()
+
+    @api.model_cr
+    def init(self):
+        tools.convert_file(
+            self._cr, "project_type", "data/project_data.xml", {}
+        )
+        self._cr.commit()
 
 
 class Project(models.Model):
